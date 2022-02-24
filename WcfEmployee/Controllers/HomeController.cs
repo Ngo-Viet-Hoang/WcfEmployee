@@ -6,10 +6,13 @@ using System.Web.Mvc;
 
 namespace WcfEmployee.Controllers
 {
+  
     public class HomeController : Controller
-    {
+    { 
+        static WCFServiceEmployee.Service1Client service1Client = new WCFServiceEmployee.Service1Client();
         public ActionResult Index()
-        {
+        {   
+            service1Client.GetList();
             return View();
         }
 
